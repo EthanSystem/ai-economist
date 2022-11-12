@@ -52,8 +52,8 @@ class BaseAgent:
             {}
         )  # Used to convert single-action-mode actions to the general format
 
-        self.action = dict()
-        self.action_dim = dict()
+        self.action = dict()  # 动作字典
+        self.action_dim = dict()  # 动作维度
         self._action_names = []
         self._multi_action_dict = {}
         self._unique_actions = 0
