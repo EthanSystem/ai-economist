@@ -52,16 +52,16 @@ class BaseAgent:
             {}
         )  # Used to convert single-action-mode actions to the general format
 
-        self.action = dict()  # 动作字典
-        self.action_dim = dict()  # 动作维度
-        self._action_names = []
+        self.action = dict()  # 行为之字典
+        self.action_dim = dict()  # 行为之维度
+        self._action_names = []  # 行为之名称
         self._multi_action_dict = {}
         self._unique_actions = 0
         self._total_actions = 0
 
-        self.state = dict(loc=[0, 0], inventory={}, escrow={}, endogenous={})
+        self.state = dict(loc=[0, 0], inventory={}, escrow={}, endogenous={}) # 状态，记录位置，持有的资源情况。
 
-        self._registered_inventory = False
+        self._registered_inventory = False  # 是否已注册`inventory`；
         self._registered_endogenous = False
         self._registered_components = False
         self._noop_action_dict = dict()
