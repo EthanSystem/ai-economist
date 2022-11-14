@@ -176,20 +176,20 @@ class BaseEnvironment(ABC):
     required_entities = None  # Replace with list or tuple (can be empty)
 
     def __init__(
-        self,
-        components=None,
-        n_agents=None,
-        world_size=None,
-        episode_length=1000,
-        multi_action_mode_agents=False,
-        multi_action_mode_planner=True,
-        flatten_observations=True,
-        flatten_masks=True,
-        allow_observation_scaling=True,
-        dense_log_frequency=None,
-        world_dense_log_frequency=50,
-        collate_agent_step_and_reset_data=False,
-        seed=None,
+            self,
+            components=None,  # 组件
+            n_agents=None,  # agent数量
+            world_size=None,  # 世界大小
+            episode_length=1000,  # 回合长度
+            multi_action_mode_agents=False,  # 普通agent之多重行为模式
+            multi_action_mode_planner=True,  # 规划者agent之多重行为模式
+            flatten_observations=True,  # 是否展开所得到的观察
+            flatten_masks=True,  # 是否展开掩码
+            allow_observation_scaling=True,  # 是否允许观察缩放
+            dense_log_frequency=None,  # 记录日志频率
+            world_dense_log_frequency=50,  # 世界纪录日志频率
+            collate_agent_step_and_reset_data=False,  # 是否收集agent之步进信息并且重置数据
+            seed=None,  # 随机种子
     ):
 
         # Make sure a name was declared by child class
@@ -226,7 +226,7 @@ class BaseEnvironment(ABC):
         # Foundation assumes there's only a single planner
         n_planners = 1
         self.num_agents = (
-            n_agents + n_planners
+                n_agents + n_planners
         )  # used in the warp_drive env wrapper (+ 1 for the planner)
 
         # Components must be a tuple/list where each element is either a...
@@ -316,12 +316,12 @@ class BaseEnvironment(ABC):
         # Initialize the world object (contains agents and world map),
         # now that we know all the entities we'll use.
         self.world = World(
-            self.world_size,
-            self.n_agents,
-            self.resources,
-            self.landmarks,
-            self.multi_action_mode_agents,
-            self.multi_action_mode_planner,
+            self.world_size,  # 世界尺寸
+            self.n_agents,  # agent数量
+            self.resources,  # 资源众
+            self.landmarks,  # 标记众
+            self.multi_action_mode_agents,  # 普通agent之多重行为模式
+            self.multi_action_mode_planner,  # 规划者agent之多重行为模式
         )
 
         # Initialize the component objects.
@@ -886,8 +886,8 @@ class BaseEnvironment(ABC):
             self._dense_log_this_episode = False
         else:
             self._dense_log_this_episode = (
-                self._completions % self._create_dense_log_every
-            ) == 0
+                                                   self._completions % self._create_dense_log_every
+                                           ) == 0
 
         # For dense logging
         self._dense_log = {"world": [], "states": [], "actions": [], "rewards": []}
