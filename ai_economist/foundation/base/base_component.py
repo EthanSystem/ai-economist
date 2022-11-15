@@ -65,7 +65,7 @@ class BaseComponent(ABC):
 
         assert isinstance(self.agent_subclasses, (tuple, list))
         assert len(self.agent_subclasses) > 0
-        if len(self.agent_subclasses) > 1:
+        if len(self.agent_subclasses) > 1:  # 为了保证agent注册的子类各不相同
             for i in range(len(self.agent_subclasses)):
                 for j in range(len(self.agent_subclasses)):
                     if i == j:

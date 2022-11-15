@@ -309,7 +309,7 @@ class BaseEnvironment(ABC):
                 component_config = list(component_spec.values())[0]
             else:
                 raise TypeError
-            component_cls = component_registry.get(component_name)
+            component_cls = component_registry.get(component_name)  # 注册组件，获得组件相关的参数
             self._register_entities(component_cls.required_entities)
             component_classes.append([component_cls, component_config])
 
