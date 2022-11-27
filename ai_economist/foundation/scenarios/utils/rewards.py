@@ -12,7 +12,7 @@ from ai_economist.foundation.scenarios.utils import social_metrics
 def isoelastic_coin_minus_labor(
     coin_endowment, total_labor, isoelastic_eta, labor_coefficient
 ):
-    """Agent utility, concave increasing in coin and linearly decreasing in labor.
+    """计算个体之等弹性效用。Agent utility, concave increasing in coin and linearly decreasing in labor.
 
     Args:
         coin_endowment (float, ndarray): The amount of coin owned by the agent(s).
@@ -51,7 +51,7 @@ def isoelastic_coin_minus_labor(
 def coin_minus_labor_cost(
     coin_endowment, total_labor, labor_exponent, labor_coefficient
 ):
-    """Agent utility, linearly increasing in coin and decreasing as a power of labor.
+    """计算Agent之效用 Agent utility, linearly increasing in coin and decreasing as a power of labor.
 
     Args:
         coin_endowment (float, ndarray): The amount of coin owned by the agent(s).
@@ -82,7 +82,7 @@ def coin_minus_labor_cost(
 
 
 def coin_eq_times_productivity(coin_endowments, equality_weight):
-    """Social welfare, measured as productivity scaled by the degree of coin equality.
+    """社会福利，衡量以生产力等于货币的比例。Social welfare, measured as productivity scaled by the degree of coin equality.
 
     Args:
         coin_endowments (ndarray): The array of coin endowments for each of the

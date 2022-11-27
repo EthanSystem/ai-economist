@@ -268,7 +268,7 @@ class LayoutFromFile(BaseEnvironment):
 
     def get_current_optimization_metrics(self):
         """
-        Compute optimization metrics based on the current state. Used to compute reward.
+        基于当前状态，计算优化测度 Compute optimization metrics based on the current state. Used to compute reward.
 
         Returns:
             curr_optimization_metric (dict): A dictionary of {agent.idx: metric}
